@@ -6,18 +6,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm start",
-    "start": "wym-react start",
-    "test": "wym-react test",
+    "start": "wym-react-build start",
+    "test": "wym-react-build test",
     "lint": "eslint --ext .jsx,.js src test/unit test/e2e/specs",
     "fix": "eslint --fix src",
-    "build": "wym-react build"
+    "build": "wym-react-build build"
   },
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
-    "wym-react-cli": "^1.0.0"
+    "wym-react-build": "^1.0.0"
   },
   "license": "ISC"
 }
