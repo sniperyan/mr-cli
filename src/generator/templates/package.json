@@ -3,7 +3,7 @@
   "author": "__AuthorName__",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "dev": "npm start",
     "start": "wym-react-build start",

@@ -2,6 +2,9 @@
 
 
 const path = require('path')
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
 
 module.exports = {
   dev: {
@@ -9,6 +12,10 @@ module.exports = {
     /**
      * Paths
      */
+    //工程入口文件
+    entry: {
+      app: resolve('../src/main.js')
+    },
     //静态资源二级目录名称
     assetsSubDirectory: 'static',   
     // CDN 地址
@@ -49,13 +56,17 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: resolve('../dist/index.html'),
 
     /**
      * Paths
      */
+    //工程入口文件
+    entry: {
+      app: resolve('../src/main.js')
+    },
     //根目录
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: resolve('../dist'),
     //静态资源二级目录名称
     assetsSubDirectory: 'static',
     // CDN 地址
