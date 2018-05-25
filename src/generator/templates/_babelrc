@@ -9,6 +9,10 @@
       "react",
       "stage-0"
     ],
-    "plugins": ["transform-decorators-legacy", "transform-runtime"]
+    "plugins": [
+      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+      "transform-decorators-legacy", 
+      "transform-runtime"
+    ]
   }
   

@@ -1,0 +1,42 @@
+
+// base
+
+@base-color: #1e90ff;
+@base-font-size: 12px;
+
+@base-padding-left:10px;
+@base-padding-right:10px;
+@base-padding-top:10px;
+@base-padding-bottom:10px;
+
+@base-margin-left:10px;
+@base-margin-right:10px;
+@base-margin-top:10px;
+@base-margin-bottom:10px;
+
+@base-border: 1px solid #e8e8e8;
+
+
+// clearfix
+
+.clearfix(){
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  zoom:1;
+}
+
+// font
+
+.label-font(){
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+}
+
+.prompt-font(){
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+}

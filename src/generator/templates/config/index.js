@@ -14,7 +14,7 @@ module.exports = {
      */
     //工程入口文件
     entry: {
-      app: resolve('../src/main.js')
+      app: resolve('../src/index.js')
     },
     //静态资源二级目录名称
     assetsSubDirectory: 'static',   
@@ -63,7 +63,7 @@ module.exports = {
      */
     //工程入口文件
     entry: {
-      app: resolve('../src/main.js')
+      app: resolve('../src/index.js')
     },
     //根目录
     assetsRoot: resolve('../dist'),
