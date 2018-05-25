@@ -1,0 +1,26 @@
+{
+  "name": "wym-react-cli",
+  "version": "1.0.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "engines": {
+    "npm": ">=4.0.0"
+  },
+  "bin": {
+    "rax": "bin/cli.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cross-spawn": "^4.0.2",
+    "easyfile": "^0.1.1",
+    "inquirer": "^3.0.6",
+    "minimist": "^1.2.0",
+    "semver": "^5.3.0",
+    "update-notifier": "^1.0.3"
+  },
+  "license": "ISC"
+}
