@@ -11,7 +11,7 @@
     "lint": "eslint --ext .jsx,.js src test/unit test/e2e/specs",
     "fix": "eslint --fix src",
     "dist": "npm run build",
-    "build": "wym-react-build build"
+    "build": "rm -rf dist && wym-react-build build"
   },
   "dependencies": {
     "antd": "^3.5.3",
