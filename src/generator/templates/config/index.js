@@ -21,7 +21,9 @@ module.exports = {
     // CDN 地址
     assetsPublicPath: '/',   
     // 设置代理  https://webpack.js.org/configuration/dev-server/#devserver-proxy 
-    proxyTable: {},   
+    proxyTable: {},
+    //favicon
+    favicon: resolve('../src/assets/favicon.ico'),
 
     /**
      * Various Dev Server settings
@@ -54,6 +56,8 @@ module.exports = {
     cssSourceMap: true
   },
 
+
+  // build 和 test 共用一个配置
   build: {
     // Template for index.html
     index: resolve('../dist/index.html'),
@@ -71,7 +75,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     // CDN 地址
     assetsPublicPath: '/',
-
+    //favicon
+    favicon: resolve('../src/assets/favicon.ico'),
     /**
      * Source Maps
      */

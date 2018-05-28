@@ -64,13 +64,25 @@ npm start
 打开 http://localhost:8000 #端口在工程目录config/index.js   dev.port修改
 ```
 
-构建：
+构建测试包：
+
+
+```bash
+npm run test
+
+将会打包至dist目录 
+测试包静态文件命名规则,以js为例： [name.version.cversion.hash.js]
+
+```
+
+构建生产包：
 
 
 ```bash
 npm run dist
 
 将会打包至dist目录 
+生产包静态文件命名规则,以js为例： [name.version.hash.js]
 
 ```
 
