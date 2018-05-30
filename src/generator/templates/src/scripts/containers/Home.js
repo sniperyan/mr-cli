@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as homeAction from '../actions/home';
+import logo from '../../assets/logo.svg';
 
 
 @connect(
@@ -26,9 +27,11 @@ class Home extends PureComponent {
     const {count} = this.props;
     return (
       <div>
-        <h1 >Home</h1>
+        <h1 >Home1</h1>
         <h2>{count}</h2>
         <button onClick={this.click}>add</button>
+        <img src={logo} alt="logo" />
+        
       </div>
     );
   }

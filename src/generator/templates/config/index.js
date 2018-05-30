@@ -23,7 +23,8 @@ module.exports = {
     // 设置代理  https://webpack.js.org/configuration/dev-server/#devserver-proxy 
     proxyTable: {},
     //favicon
-    favicon: resolve('../src/assets/favicon.ico'),
+    favicon: resolve('../public/favicon.ico'),
+    appHtml: resolve('../public/index.html'),
 
     /**
      * Various Dev Server settings
@@ -50,10 +51,15 @@ module.exports = {
      * Source Maps
      */
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
 
 
-    cssSourceMap: true
+    cssSourceMap: true,
+
+    // `publicUrl` is just like `publicPath`, but we will provide it to our app
+    // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
+    // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
+    publicUrl: ''
   },
 
 
@@ -76,7 +82,8 @@ module.exports = {
     // CDN 地址
     assetsPublicPath: '/',
     //favicon
-    favicon: resolve('../src/assets/favicon.ico'),
+    favicon: resolve('../public/favicon.ico'),
+    appHtml: resolve('../public/index.html'),
     /**
      * Source Maps
      */
@@ -96,6 +103,24 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
+    bundleAnalyzerReport: process.env.npm_config_report,
+    SWPrecacheSettings:{
+      cacheId: 'my-project',   // service worker cache  unique name
+      filename: 'service-worker.js',
+      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      minify: true,
+      stripPrefix: 'dist/',
+      // For unknown URLs, fallback to the index page
+      navigateFallback:'/index.html',
+      // Ignores URLs starting from /__ (useful for Firebase):
+      // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
+      navigateFallbackWhitelist: [/^(?!\/__).*/],
+      // Don't precache sourcemaps (they're large) and build asset manifest:
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+    },
+    // `publicUrl` is just like `publicPath`, but we will provide it to our app
+    // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
+    // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
+    publicUrl: ''
   }
 }
