@@ -10,6 +10,13 @@ wym react web 脚手架
 
 ## 更新日志
 
+### 1.0.13
+
+`2018-6-5`
+
+* 添加pwa支持，默认不开启
+* 支持路由拆分
+
 ### 1.0.8
 
 `2018-5-26`
@@ -22,24 +29,100 @@ wym react web 脚手架
 ### 目录结构
 
 ```bash
-├─config                # 项目打包构建配置目录
-└─src                   # 项目源码目录
-    ├─assets            # 项目静态资源目录
-    ├─scripts           # 项目js代码目录
-    │  ├─components     # react 组件目录
-    |  ├─actions        # redux actions代码目录
-    │  ├─containers     # redux containers目录
-    │  ├─reducers       # redux reducers目录
-    │  │  ├─about       # redux 拆分 reducer目录 (该目录为演示demo)
-    │  │  └─home        # redux 拆分 reducer目录 (该目录为演示demo)
-    │  ├─store          # redux store目录
-    │  └─util           # 项目util js目录
-    └─styles            # 项目样式文件目录
+├─config                  # 项目打包构建配置目录
+│      index.js
+│      
+├─dist                    # 项目打包输出目录
+│  │  asset-manifest.json
+│  │  favicon.ico
+│  │  index.html
+│  │  manifest.json
+│  │  service-worker.js
+│  │  
+│  └─static
+│      ├─css
+│      │      app.1.0.0.3d3bffb636aaa4980638031824a5087b.css
+│      │      app.1.0.0.3d3bffb636aaa4980638031824a5087b.css.map
+│      │      
+│      └─js
+│              0.1.0.0.cd4d22c125a5e7b9a016.js
+│              0.1.0.0.cd4d22c125a5e7b9a016.js.map
+│              1.1.0.0.cbe2fe044fab28d0bc18.js
+│              1.1.0.0.cbe2fe044fab28d0bc18.js.map
+│              app.1.0.0.70d324ad4dfa2b78763d.js
+│              app.1.0.0.70d324ad4dfa2b78763d.js.map
+│              manifest.1.0.0.d826c1cb9dc9be6dcd29.js
+│              manifest.1.0.0.d826c1cb9dc9be6dcd29.js.map
+│              vendor.1.0.0.31afbf5756dc97879958.js
+│              vendor.1.0.0.31afbf5756dc97879958.js.map
+│              
+├─public                   # 项目模板资源目录
+│      favicon.ico
+│      index.html
+│      manifest.json
+│      
+└─src                       # 项目源码目录
+    │  index.js
+    │  registerServiceWorker.js
+    │  
+    ├─assets                # 项目静态资源目录
+    │      logo.svg
+    │      
+    ├─scripts               # 项目js代码目录
+    │  │  Main.js
+    │  │  
+    │  ├─actions            # redux actions代码目录
+    │  │  ├─about
+    │  │  │      index.js
+    │  │  │      
+    │  │  └─home
+    │  │          index.js
+    │  │          
+    │  ├─components         # react 组件目录
+    │  │  └─dataTable
+    │  │          index.js
+    │  │          
+    │  ├─containers         # redux containers目录
+    │  │  ├─about
+    │  │  │      app.js     # app.js为页面级应用
+    │  │  │      index.js   # index.js为路由拆分入口文件
+    │  │  │      
+    │  │  └─home
+    │  │          app.js
+    │  │          index.js
+    │  │          
+    │  ├─reducers           # redux reducers目录
+    │  │  │  index.js
+    │  │  │  
+    │  │  ├─about           # redux 拆分 reducer目录 (该目录为演示demo)
+    │  │  │      index.js
+    │  │  │      initialState.js
+    │  │  │      
+    │  │  └─home
+    │  │          index.js
+    │  │          initialState.js
+    │  │          
+    │  ├─store              # redux store目录
+    │  │      index.js
+    │  │      
+    │  └─util               # 项目util js目录
+    │          cookie.js
+    │          loading.js
+    │          
+    └─styles                # 项目样式文件目录
+            animation.less
+            default.less
+            global.less
+            test1.scss
+            test2.css
+         
 ```
 
-文件夹命名说明:
+说明:
 
-* components：组件（方法）为单位以文件夹保存，文件夹名组件首字母大写（如`DataTable`），方法首字母小写（如`layer`）,文件以`index.js`导出对象（如`./src/components/DataTable/index.js`）。
+* components：组件（方法）为单位以文件夹保存，组件名首字母大写（如`DataTable`），方法首字母小写（如`layer`）,文件以`index.js`导出对象（如`./src/components/dataTable/index.js`）。
+* 文件夹名称小写，以`index.js`暴露入口
+* containers文件夹下为页面级应用，每个页面以一个子文件夹包裹，其中`app.js`为页面应用，`index.js`为拆分路由组件
 
 ### 快速开始
 
@@ -97,6 +180,21 @@ npm run lint
 ```bash
 npm run fix
 ```
+
+## pwa应用
+
+默认不开启`service-worker`，如要开启可按如下步骤操作
+1. `src/index.js`修改如下
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Main from './scripts/Main';
+import registerServiceWorker from './registerServiceWorker';
+ReactDOM.render(<Main />, document.getElementById('app'));
+registerServiceWorker();
+
+```
+2. config 配置文件 build项设置 `useServiceWorker:true`
 
 ## FAQ
 

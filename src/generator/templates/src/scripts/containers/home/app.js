@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as homeAction from '../actions/home';
-import logo from '../../assets/logo.svg';
-
+import * as homeAction from '../../actions/home';
+import logo from '../../../assets/logo.svg';
+import { Link } from 'react-router-dom';
 
 @connect(
   state => ({
@@ -31,6 +31,7 @@ class Home extends PureComponent {
         <h2>{count}</h2>
         <button onClick={this.click}>add</button>
         <img src={logo} alt="logo" />
+        <Link to="/about">To About</Link>
         
       </div>
     );
