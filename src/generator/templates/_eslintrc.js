@@ -9,6 +9,7 @@ module.exports = {
               handlers: [
               ]
             }
-          ]
+          ],
+        'max-len': [0, 160, 4],
     }
 }
