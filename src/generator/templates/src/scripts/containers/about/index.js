@@ -1,4 +1,4 @@
-import Loading from '../../util/loading';
+import Loading from '../../components/common/loading';
 import Loadable from 'react-loadable';
 
 const AboutAPP = Loadable({
