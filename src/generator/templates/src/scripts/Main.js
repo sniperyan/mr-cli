@@ -11,8 +11,6 @@ import Home from './containers/home';
 import About from './containers/about';
 import configureStore from './store';
 import '../styles/global.less';
-import '../styles/test1.scss';
-import '../styles/test2.css';
 
 moment.locale('zh-cn');
 

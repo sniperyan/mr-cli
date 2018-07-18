@@ -11,5 +11,6 @@ module.exports = {
             }
           ],
         'max-len': [0, 160, 4],
+        'radix':'off'
     }
 }
