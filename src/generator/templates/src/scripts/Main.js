@@ -10,7 +10,8 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import Home from './containers/home';
 import About from './containers/about';
 import configureStore from './store';
-import '../styles/global.less';
+
+
 
 moment.locale('zh-cn');
 
