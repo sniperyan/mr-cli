@@ -48,7 +48,7 @@ var commands = argv._;
 
 if (commands.length === 0) {
   console.error(
-    'You did not pass any commands, did you mean to run `wym-react-cli init`?'
+    'You did not pass any commands, did you mean to run `muci-cli init`?'
   );
   process.exit(1);
 }
@@ -57,7 +57,7 @@ switch (commands[0]) {
   case 'init':
     if (!commands[1]) {
       console.error(
-        'Usage: wym-react-cli init <ProjectName> [--verbose]'
+        'Usage: muci-cli init <ProjectName> [--verbose]'
       );
       process.exit(1);
     } else {
@@ -124,7 +124,7 @@ function askProjectInformaction(name, verbose, rwPackage) {
       type: 'input',
       name: 'author',
       message: 'What\'s author\'s name?',
-      default: 'wym'
+      default: 'muci'
     },
     {
       type: 'confirm',
@@ -144,7 +144,7 @@ function createProject(name, verbose, rwPackage, userAnswers) {
   var autoInstallModules = userAnswers.autoInstallModules;
 
   console.log(
-    'Creating a new wym-react project in',
+    'Creating a new react project in',
     root
   );
 
