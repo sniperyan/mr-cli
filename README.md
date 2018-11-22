@@ -1,28 +1,21 @@
-# wym-react-cli
+# muci-cli
 
-wym react web 脚手架
+基于webpack4 开箱即用react 脚手架
 
 ## 特性
 
 * 基于[react16](https://github.com/facebook/react)，[ant-design](https://github.com/ant-design/ant-design)，[react-router4](https://reacttraining.com/react-router/web/example/basic)，[redux](https://redux.js.org/) 企业级web系统最佳实践。
 * 基于 Antd UI 设计语言，提供后台管理系统常见使用场景。
-* 使用[wym-react-build](https://www.npmjs.com/package/wym-react-build)本地调试和构建，其中 Mock 功能实现脱离后端独立开发。
+
 
 ## 更新日志
 
-### 1.0.13
+### 1.0.0
 
-`2018-6-5`
+`2018-11-22`
 
-* 添加pwa支持，默认不开启
-* 支持路由拆分
+* 第一个版本
 
-### 1.0.8
-
-`2018-5-26`
-
-* 添加readme
-* 尽可能的保持`antd`的设计语言。
 
 ## 开发构建
 
@@ -129,14 +122,14 @@ wym react web 脚手架
 安装脚手架:
 
 ```bash
-npm install -g wym-react-cli 
+npm install -g muci-cli 
 ```
 
 进入目录初始化项目:
 
 ```bash
 #国内用户推荐yarn或者cnpm
-wym-react-cli init <ProjectName> 
+muci-cli init <ProjectName> 
 ```
 命令行选择工程名称，作者名称，是否自动安装依赖
 
@@ -147,22 +140,13 @@ npm start
 打开 http://localhost:8000 #端口在工程目录config/index.js   dev.port修改
 ```
 
-构建测试包：
 
-
-```bash
-npm run test
-
-将会打包至dist目录 
-测试包静态文件命名规则,以js为例： [name.version.cversion.hash.js]
-
-```
 
 构建生产包：
 
 
 ```bash
-npm run dist
+npm run build
 
 将会打包至dist目录 
 生产包静态文件命名规则,以js为例： [name.version.hash.js]

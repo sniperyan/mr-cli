@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 
-const path = require('path')
-function resolve (dir) {
-  return path.join(__dirname, dir)
+const path = require('path');
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
 
 module.exports = {
@@ -13,19 +13,22 @@ module.exports = {
      * Paths
      */
     //工程入口文件
-    entry: {
-      app: resolve('../src/index.js')
-    },
+    entry: resolve('../src/index.js'),
     //静态资源二级目录名称
     assetsSubDirectory: 'static',   
     // CDN 地址
     assetsPublicPath: '/',   
-    // 设置代理  https://webpack.js.org/configuration/dev-server/#devserver-proxy 
-    proxyTable: {},
+    // // 设置代理  https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development#configuring-the-proxy-manually
+    proxySetup: resolve('../src/setupProxy.js'),
+    // proxyTable: {},
+
     //favicon
     favicon: resolve('../public/favicon.ico'),
     appHtml: resolve('../public/index.html'),
 
+    alias:{
+      'react-native': 'react-native-web',
+    },
     /**
      * Various Dev Server settings
      */
@@ -35,7 +38,7 @@ module.exports = {
     port: 8080, 
     //自动打开浏览器
     autoOpenBrowser: false,   
-     //https://webpack.js.org/configuration/dev-server/#devserver-overlay
+    //https://webpack.js.org/configuration/dev-server/#devserver-overlay
     errorOverlay: true,   
     // https://www.npmjs.com/package/friendly-errors-webpack-plugin 
     notifyOnErrors: true,  
@@ -59,7 +62,7 @@ module.exports = {
     // `publicUrl` is just like `publicPath`, but we will provide it to our app
     // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
     // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
-    publicUrl: ''
+    publicUrl: '',
   },
 
 
@@ -72,9 +75,7 @@ module.exports = {
      * Paths
      */
     //工程入口文件
-    entry: {
-      app: resolve('../src/index.js')
-    },
+    entry: resolve('../src/index.js'),
     //根目录
     assetsRoot: resolve('../dist'),
     //静态资源二级目录名称
@@ -84,11 +85,15 @@ module.exports = {
     //favicon
     favicon: resolve('../public/favicon.ico'),
     appHtml: resolve('../public/index.html'),
+
+    alias: {
+      'react-native': 'react-native-web',
+    },
     /**
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
@@ -118,11 +123,11 @@ module.exports = {
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     },
     // `publicUrl` is just like `publicPath`, but we will provide it to our app
     // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
     // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
-    publicUrl: ''
-  }
-}
+    publicUrl: '',
+  },
+};

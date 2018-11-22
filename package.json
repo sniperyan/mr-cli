@@ -1,6 +1,6 @@
 {
-  "name": "wym-react-cli",
-  "version": "1.0.19",
+  "name": "muci-cli",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "npm": ">=4.0.0"
   },
   "bin": {
-    "wym-react-cli": "bin/cli.js"
+    "muci-cli": "bin/cli.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",
