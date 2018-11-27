@@ -119,17 +119,12 @@
 
 ### 快速开始
 
-安装脚手架:
 
-```bash
-npm install -g muci-cli 
-```
-
-进入目录初始化项目:
+初始化项目:
 
 ```bash
 #国内用户推荐yarn或者cnpm
-muci-cli init <ProjectName> 
+npx muci-cli init <ProjectName> 
 ```
 命令行选择工程名称，作者名称，是否自动安装依赖
 
