@@ -168,19 +168,16 @@ npm run fix
 ## pwa应用
 
 默认不开启`service-worker`，如要开启可按如下步骤操作
-1. `src/index.js`修改如下
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './scripts/Main';
-import registerServiceWorker from './registerServiceWorker';
-ReactDOM.render(<Main />, document.getElementById('app'));
-registerServiceWorker();
 
-```
-2. config 配置文件 build项设置 `useServiceWorker:true`
+1.. config 配置文件 build项设置 `useServiceWorker:true`
 
 ## FAQ
+
+1. `pre-commit` 失效,To install it as devDependency. When this module is installed it will override the existing pre-commit file in your .git/hooks folder. Existing pre-commit hooks will be backed up as pre-commit.old in the same repository.
+```bash
+npm uninstall pre-commit
+npm install pre-commit --save-dev
+```
 
 
 
