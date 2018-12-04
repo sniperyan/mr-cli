@@ -115,6 +115,13 @@ function createAfterConfirmation(name, verbose, rwPackage) {
 function askProjectInformaction(name, verbose, rwPackage) {
   var questions = [
     {
+      type: 'list',
+      name: 'projectType',
+      message: 'Do you want create PC or Mobile project?',
+      choices: ['Mobile','PC'],
+      default: 'Mobile'
+    },
+    {
       type: 'input',
       name: 'projectName',
       message: 'What\'s your project name?',
@@ -140,6 +147,7 @@ function createProject(name, verbose, rwPackage, userAnswers) {
   var pkgManager = shouldUseYarn() ? 'yarn' : 'npm';
   var root = path.resolve(name);
   var projectName = userAnswers.projectName;
+  var projectType = userAnswers.projectType;
   var projectAuthor = userAnswers.author;
   var autoInstallModules = userAnswers.autoInstallModules;
 
@@ -157,6 +165,7 @@ function createProject(name, verbose, rwPackage, userAnswers) {
     root: root,
     directoryName: name,
     projectName: projectName,
+    projectType: projectType,
     projectAuthor: projectAuthor,
     verbose: verbose,
     rwPackage: rwPackage

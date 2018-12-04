@@ -24,13 +24,14 @@ module.exports = {
         '/proxy': {
           target: 'https://cnodejs.org',
           pathRewrite: {'^/proxy' : ''},
+          changeOrigin: true, //The origin of the host header is kept when proxying by default, you can set changeOrigin to true to override this behaviour.
           secure: false,  //A backend server running on HTTPS with an invalid certificate will not be accepted by default
         },
       },
     },
 
     //do not check the host are vulnerable to DNS rebinding attacks
-    disableHostCheck:false,
+    disableHostCheck:true,
 
    
     // Template for index.html
@@ -49,9 +50,11 @@ module.exports = {
     // if port is in use, a free one will be determined
     port: 8080, 
     // use px2rem
-    px2rem:true,
+    px2rem:false,
     //https://github.com/songsiqi/px2rem
-    px2remOptions:{},
+    px2remOptions:{
+      remUnit:75  //rem unit value (default: 75)
+    },
     //自动打开浏览器
     autoOpenBrowser: false,   
 
@@ -94,7 +97,7 @@ module.exports = {
       'react-native': 'react-native-web',
     },
     // use px2rem
-    px2rem:true,
+    px2rem:false,
     //https://github.com/songsiqi/px2rem
     px2remOptions:{},
     /**

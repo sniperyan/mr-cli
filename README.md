@@ -6,6 +6,7 @@
 
 * 基于[react16](https://github.com/facebook/react)，[ant-design](https://github.com/ant-design/ant-design)，[react-router4](https://reacttraining.com/react-router/web/example/basic)，[redux](https://redux.js.org/) 企业级web系统最佳实践。
 * 基于 Antd UI 设计语言，提供后台管理系统常见使用场景。
+* 支持移动端和PC端，支持px2rem适配
 
 
 ## 更新日志

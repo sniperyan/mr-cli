@@ -9,8 +9,22 @@ module.exports = function(kwargs) {
   var projectDir = kwargs.root;
   var projectName = kwargs.projectName;
   var projectAuthor = kwargs.projectAuthor;
+  var projectAuthor = kwargs.projectAuthor;
+  var projectType = kwargs.projectType;
 
-  var templates = path.join(__dirname, 'templates');
+  var PCTemplate = path.join(__dirname, 'templates-pc'); 
+  var MobileTemplate = path.join(__dirname, 'templates-mobile'); 
+
+  var templates = '';
+  switch (projectType){
+    case 'Mobile':
+      templates = MobileTemplate;
+      break;
+    case 'PC':
+      templates = PCTemplate;
+      break;
+
+  }
   var pkgPath = path.join(projectDir, 'package.json');
   easyfile.copy(templates, projectDir, {
     force: true,
