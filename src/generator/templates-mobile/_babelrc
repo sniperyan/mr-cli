@@ -10,7 +10,7 @@
       "stage-0"
     ],
     "plugins": [
-      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+      ["import", { "libraryName": "antd-mobile", "style": true }],
       "transform-decorators-legacy", 
       "transform-runtime"
     ]
