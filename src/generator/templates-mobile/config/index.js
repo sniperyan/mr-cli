@@ -17,7 +17,7 @@ module.exports = {
     //静态资源二级目录名称
     assetsSubDirectory: 'static',   
     // CDN 地址
-    assetsPublicPath: '/',   
+    publicPath: '/',
     //设置代理 https://webpack.js.org/configuration/dev-server/#devserver-proxy
     proxyTable: {
       proxy: {
@@ -64,9 +64,6 @@ module.exports = {
     // https://webpack.js.org/configuration/devtool/#development
     devtool: 'cheap-module-source-map',
 
-    // Webpack uses `publicPath` to determine where the app is being served from.
-    // In development, we always serve from the root. This makes config easier.
-    publicPath:'',
 
     // `publicUrl` is just like `publicPath`, but we will provide it to our app
     // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
@@ -88,7 +85,7 @@ module.exports = {
     //静态资源二级目录名称
     assetsSubDirectory: 'static',
     // CDN 地址
-    assetsPublicPath: '/',
+    publicPath: '/',
 
     // Template for index.html
     appHtml: resolve('../public/index.html'),
@@ -109,9 +106,6 @@ module.exports = {
     //serviceworker
     useServiceWorker:false,
 
-    // Webpack uses `publicPath` to determine where the app is being served from.
-    // It requires a trailing slash, or the file assets will get an incorrect path.
-    publicPath:'',
     
     // `publicUrl` is just like `publicPath`, but we will provide it to our app
     // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
