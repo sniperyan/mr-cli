@@ -1,6 +1,6 @@
 # mr-cli
 
-基于webpack4 开箱即用react 脚手架
+基于webpack3 开箱即用react 脚手架
 
 ## 特性
 
