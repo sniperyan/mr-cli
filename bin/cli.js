@@ -48,7 +48,7 @@ var commands = argv._;
 
 if (commands.length === 0) {
   console.error(
-    'You did not pass any commands, did you mean to run `muci-cli init`?'
+    'You did not pass any commands, did you mean to run `mr-cli init`?'
   );
   process.exit(1);
 }
@@ -57,7 +57,7 @@ switch (commands[0]) {
   case 'init':
     if (!commands[1]) {
       console.error(
-        'Usage: muci-cli init <ProjectName> [--verbose]'
+        'Usage: mr-cli init <ProjectName> [--verbose]'
       );
       process.exit(1);
     } else {
@@ -131,7 +131,7 @@ function askProjectInformaction(name, verbose, rwPackage) {
       type: 'input',
       name: 'author',
       message: 'What\'s author\'s name?',
-      default: 'muci'
+      default: 'mr'
     },
     {
       type: 'confirm',

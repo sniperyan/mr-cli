@@ -53,7 +53,7 @@ export default function request(url, options, mockData) {
     });
   }
   const defaultOptions = {
-    credentials: 'include',
+    // credentials: 'include',
   };
   const newOptions = { ...defaultOptions, ...options };
   if (newOptions.method === 'POST' || newOptions.method === 'PUT'

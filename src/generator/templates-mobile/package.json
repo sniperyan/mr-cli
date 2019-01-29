@@ -5,13 +5,14 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "npm start",
-    "start": "npm run fix && muci start",
-    "test": "rm -rf dist && muci test",
+    "dev": "npm start && npm run mock",
+    "start": "npm run fix && mr-build start",
+    "test": "rm -rf dist && mr-build test",
     "lint": "eslint --max-warnings 0 src",
     "fix": "eslint --fix src",
     "dist": "npm run build",
-    "build": "rm -rf dist && muci build"
+    "mock": "node mock/app.js",
+    "build": "rm -rf dist && mr-build build"
   },
   "dependencies": {
     "antd-mobile": "^2.2.6",
@@ -28,17 +29,12 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "pre-commit": "^1.2.2",
-    "muci": "^1.0.0"
+    "mockjs": "^1.0.1-beta3",
+    "mr-build": "^1.0.0",
+    "pre-commit": "^1.2.2"
   },
   "pre-commit": [
     "lint"
   ],
-  "license": "ISC",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "license": "ISC"
 }

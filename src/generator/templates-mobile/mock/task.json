@@ -1,0 +1,10 @@
+[
+    {
+        "url": "/rest/test",
+        "desc": "test",
+        "mock": true,
+        "res": {
+            "data":"test"
+        }
+    }
+]

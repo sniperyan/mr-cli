@@ -1,4 +1,4 @@
-# muci-cli
+# mr-cli
 
 基于webpack4 开箱即用react 脚手架
 
@@ -6,7 +6,7 @@
 
 * 基于[react16](https://github.com/facebook/react)，[ant-design](https://github.com/ant-design/ant-design)，[react-router4](https://reacttraining.com/react-router/web/example/basic)，[redux](https://redux.js.org/) 企业级web系统最佳实践。
 * 基于 Antd UI 设计语言，提供后台管理系统常见使用场景。
-* 支持移动端和PC端，支持px2rem适配
+* 支持移动端和PC端
 
 
 ## 更新日志
@@ -125,7 +125,7 @@
 
 ```bash
 #国内用户推荐yarn或者cnpm
-npx muci-cli init <ProjectName> 
+npx mr-cli init <ProjectName> 
 ```
 命令行选择工程名称，作者名称，是否自动安装依赖
 

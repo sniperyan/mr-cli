@@ -1,5 +1,5 @@
 {
-  "name": "muci-cli",
+  "name": "mr-cli",
   "version": "1.0.9",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "npm": ">=4.0.0"
   },
   "bin": {
-    "muci-cli": "bin/cli.js"
+    "mr-cli": "bin/cli.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",

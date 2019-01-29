@@ -9,7 +9,7 @@
 let URL_PREFIX = '';
 switch (process.env.NODE_ENV) {
   case 'development':
-    URL_PREFIX = '/proxy';
+    URL_PREFIX = 'http://localhost:9618';
     break;
   case 'production':
     URL_PREFIX = '/proxy';
